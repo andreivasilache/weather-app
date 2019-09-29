@@ -2,9 +2,11 @@ import '../Header/header.css';
 import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, withRouter, RouteComponentProps } from 'react-router-dom';
 
-class Header extends Component{
+interface ISection{}
+
+class Header extends React.Component<ISection & RouteComponentProps>{
     render(){
        return (
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -28,5 +30,4 @@ class Header extends Component{
     }
 }
 
-
-export default Header;
+export default withRouter(Header);
