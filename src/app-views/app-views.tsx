@@ -1,20 +1,20 @@
 import React , { Component } from 'react';
-import { BrowserRouter as  Switch, Route, BrowserRouter } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import TodayComponent from './today/today';
 import TomorrowComponent from './tomorrow/tomorrow';
 import FutureComponent from './future/future';
 
+import history from '../helpers/history';
 
 class AppViews extends Component{
     render(){
+        {console.log(history)};
         return(
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path='/today' component={TodayComponent}></Route>
-                    <Route exact path='/tomoroow' component={TomorrowComponent}></Route>
-                    <Route exact path='/future' component={FutureComponent}></Route>
-                 </Switch>
-            </BrowserRouter>
+            <Router history={history}>
+                    <Route exact path={`/today`} component={TodayComponent}></Route>
+                    <Route path={`/tomoroow`} component={TomorrowComponent}></Route>
+                    <Route  path={`/future`} component={FutureComponent}></Route>
+            </Router>
         )
     }
 }

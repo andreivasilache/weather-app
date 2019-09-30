@@ -2,11 +2,16 @@ import '../Header/header.css';
 import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav';
-import { BrowserRouter as Router, NavLink, withRouter, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, withRouter, RouteComponentProps, Route, Switch } from 'react-router-dom';
 
-interface ISection{}
+import history from '../helpers/history';
 
-class Header extends React.Component<ISection & RouteComponentProps>{
+const redirectTo = (route: string) =>{
+  history.push(route);
+  return '';
+}
+
+class Header extends Component{
     render(){
        return (
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -19,9 +24,9 @@ class Header extends React.Component<ISection & RouteComponentProps>{
         <Navbar.Collapse id="basic-navbar-nav">
           <Router>
               <Nav className="mr-auto">
-                <Nav.Link as={NavLink} to='/today' >Today</Nav.Link>
-                <Nav.Link as={NavLink} to='/tomoroow'>Tomorrow</Nav.Link>
-                <Nav.Link as={NavLink} to='/future'>Future</Nav.Link>
+                <Nav.Link as={NavLink} onClick={ () => redirectTo('/today') } to='/today'>Today</Nav.Link>
+                <Nav.Link as={NavLink} onClick={ () => redirectTo('/tomoroow') } to='/tomoroow'>Tomoroow</Nav.Link>
+                <Nav.Link as={NavLink} onClick={ () => redirectTo('/future') } to='/future'>Future</Nav.Link>
               </Nav>
           </Router>
         </Navbar.Collapse>
@@ -30,4 +35,4 @@ class Header extends React.Component<ISection & RouteComponentProps>{
     }
 }
 
-export default withRouter(Header);
+export default Header;

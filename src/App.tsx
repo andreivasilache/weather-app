@@ -9,11 +9,11 @@ import { BrowserRouter } from 'react-router-dom';
 class App extends Component{
   render(){
     return (
-      <BrowserRouter>
-        <Header />
-        <AppViews /> 
-        <Footer />
-      </BrowserRouter>
+        <BrowserRouter>
+            <Header />
+            <AppViews /> 
+            <Footer />
+        </BrowserRouter>
     );
   }
 }
