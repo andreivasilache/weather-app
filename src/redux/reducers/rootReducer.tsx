@@ -1,7 +1,14 @@
 import { combineReducers } from "redux";
-import WeatherReducer from "./weatherReducer/weather.reducer";
+
+import TodayWeatherReducer from "./weatherReducer/todayWeather.reducer";
+import TomorrowWeatherReducer from "./weatherReducer/tomorrowWeather.reducer";
+import FutureWeatherReducer from "./weatherReducer/futureWeather.reducer";
 
  
 export const rootReducers = combineReducers(
-    { weatherReducer: WeatherReducer}
+    { 
+        todayWeather: TodayWeatherReducer,
+        tomorrowWeather: TomorrowWeatherReducer ,
+        futureWeather: FutureWeatherReducer
+    },
 )
