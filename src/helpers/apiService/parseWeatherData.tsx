@@ -4,7 +4,6 @@ import { Weather } from "../../interfaces/weather";
 
 
 export default function parseWeatherData(weatherObj:any): Weather{
-    console.log('weather',weatherObj);
     return{
         weatherStatus: weatherObj.weather[0].main,
         weatherDescription: weatherObj.weather[0].description,

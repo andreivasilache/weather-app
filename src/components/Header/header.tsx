@@ -26,7 +26,6 @@ class Header extends Component{
           <Router>
               <Nav className="mr-auto">
                 <Nav.Link as={NavLink} onClick={ () => redirectTo('/today') } to='/today'>Today</Nav.Link>
-                <Nav.Link as={NavLink} onClick={ () => redirectTo('/tomorrow') } to='/tomorrow'>Tomorrow</Nav.Link>
                 <Nav.Link as={NavLink} onClick={ () => redirectTo('/future') } to='/future'>Future</Nav.Link>
               </Nav>
           </Router>

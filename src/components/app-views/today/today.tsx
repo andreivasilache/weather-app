@@ -1,12 +1,14 @@
 import React , { Component } from 'react';
-import './today.sass';
+import { connect } from 'react-redux';
+
+import { FetchSuccessToday, FetchPendingToday } from '../../../redux/actions/httpActions/http.actions';
 import * as api from '../../../helpers/apiService/api.service';
 import urls from '../../../helpers/apiService/urls';
-import { connect } from 'react-redux';
-import { FetchSuccessToday, FetchPendingToday } from '../../../redux/actions/httpActions/http.actions';
 import parseWeatherData from '../../../helpers/apiService/parseWeatherData';
+
 import WeatherComponent from '../../shared/weather/weather.component';
 import LoaderComponent from '../../shared/loader/loader.component';
+import './today.sass';
 
 const mapStateToProps = (state: any) =>{
     return { todayWeather: state.todayWeather }
@@ -30,10 +32,7 @@ class TodayComponent extends Component{
     }
 
     render(){
-        console.log('data!',(this.props as any));
-        console.log('is fetching data!',(this.props as any).todayWeather.isFetchigData);
         return(
-
             <div className="weather">
                 {   
                     (this.props as any).todayWeather.isFetchigData ? <LoaderComponent /> : 

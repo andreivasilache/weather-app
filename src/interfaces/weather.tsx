@@ -1,7 +1,7 @@
 export interface Weather{
     weatherStatus: string,
     weatherDescription: string,
-    location: string,
+    location?: string,
     humidity: number,
     pressure: number,
     temp: number,

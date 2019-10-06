@@ -6,8 +6,7 @@ const units = 'metric';
 
 const urls = {
     todayApi: `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${appId}&units=${units}`,
-    tomorrowApi: '',
-    futureApi: ''
+    fiveDaysApi: `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${appId}&units=${units}`,
 }
 
 export default urls;

@@ -1,5 +1,4 @@
 import {FETCH_SUCCESSFUL_TODAY,FETCH_PENDING_TODAY,FETCH_ERROR_TODAY} from '../../actions/httpActions/http.const';
-import { Weather } from '../../../interfaces/weather';
 
 const initialState = {
     isFetchigData: true,
