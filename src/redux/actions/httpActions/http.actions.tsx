@@ -22,7 +22,7 @@ export function FetchPendingToday(pendingPayload: any){
     }
 }
 
-export function FetchSuccessFuture(payload: any){
+export function FetchSuccessFourDays(payload: any){
     return {
         type: FETCH_SUCCESSFUL_FUTURE,
         payload

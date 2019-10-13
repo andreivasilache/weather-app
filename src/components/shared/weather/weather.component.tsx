@@ -9,6 +9,7 @@ class WeatherComponent extends Component<any,any>{
     
     constructor(props: Weather){
         super(props);
+        console.log('from weather', props);
     }
 
     render(){

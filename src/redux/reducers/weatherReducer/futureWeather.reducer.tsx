@@ -1,13 +1,18 @@
 import {FETCH_SUCCESSFUL_FUTURE,FETCH_PENDING_FUTURE,FETCH_ERROR_FUTURE} from '../../actions/httpActions/http.const';
 
-const initialState = {
-    futureWeather: []
+
+const initialState: any = {
+    isFetchingData: true,
+    futureData: []
 }
 
 export default function FutureWeatherReducer(state = initialState, action: {type:string, payload: any}){
     switch(action.type){
             case FETCH_SUCCESSFUL_FUTURE:
-                return state;
+                return{
+                    isFetchingData: false,
+                    futureData: action.payload
+                } ;
             case FETCH_PENDING_FUTURE:
                 console.log('Fetching fetch', state);
                 return state;
