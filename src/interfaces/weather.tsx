@@ -1,7 +1,9 @@
 export interface Weather{
+    location?: string,
+    date?: string,
+    hour?: string,
     weatherStatus: string,
     weatherDescription: string,
-    location?: string,
     humidity: number,
     pressure: number,
     temp: number,

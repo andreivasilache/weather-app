@@ -9,15 +9,16 @@ const initialState: any = {
 export default function FutureWeatherReducer(state = initialState, action: {type:string, payload: any}){
     switch(action.type){
             case FETCH_SUCCESSFUL_FUTURE:
-                return{
+                return {
                     isFetchingData: false,
                     futureData: action.payload
-                } ;
+                };
             case FETCH_PENDING_FUTURE:
-                console.log('Fetching fetch', state);
-                return state;
+                return {
+                    isFetchingData: true,
+                    ...state
+                };
             case FETCH_ERROR_FUTURE:
-                console.log('Fetching fetch', state);
                 return state;
             default:
                 return state;

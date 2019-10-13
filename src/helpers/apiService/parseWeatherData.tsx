@@ -12,6 +12,8 @@ export default function parseWeatherData(weatherObj:any): Weather{
         humidity: weatherObj.main.humidity,
         temp_max: weatherObj.main.temp_max,
         temp_min: weatherObj.main.temp_min,
-        location: weatherObj.name
+        location: weatherObj.name,
+        date: weatherObj.date,
+        hour: weatherObj.hour
     }
 }

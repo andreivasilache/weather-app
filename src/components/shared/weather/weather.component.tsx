@@ -22,6 +22,9 @@ class WeatherComponent extends Component<any,any>{
                 <div className="weather__status">
                     {this.props.weatherData.weatherStatus} 
                 </div> 
+                <div className="weather__status">
+                    {this.props.weatherData.hour} 
+                </div> 
 
                 <Container className="weather__temperature">
                     <Row>
